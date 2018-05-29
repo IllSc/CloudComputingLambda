@@ -4,6 +4,8 @@ import logging
 import random
 import io
 import hashlib
+import pprint
+from datetime import datetime
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
@@ -38,7 +40,7 @@ def build_response(app_id,app_key,station):
 
 def elastic_search():
     # es = Elasticsearch(hosts=[{'host': 'localhost', 'port': 9200}])
-
+    
 
     es = Elasticsearch(
             hosts=[{'host': esendpoint, 'port': 443}],
@@ -59,8 +61,8 @@ def hello(event, context):
         json_response = response.json()
 
         departures = json_response['departures']['all']
-        print(station)
         for departure in departures:
+            departure['timestamp'] = datetime.now().isoformat()
             document_index = hashlib.md5(json.dumps(departure, sort_keys=True).encode('utf-8')).hexdigest()
             es.index(index='train_departure', doc_type='travel', id=document_index, body=departure)
             pass
