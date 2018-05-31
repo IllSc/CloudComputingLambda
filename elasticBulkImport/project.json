@@ -1,0 +1,11 @@
+{
+"mappings": {
+	"doc": {
+		"properties": {
+			"geo_location": {
+				"type": "geo_point"
+			}
+}
+}
+}
+}
