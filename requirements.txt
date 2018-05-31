@@ -9,7 +9,9 @@ dockerpty==0.4.1
 docopt==0.6.2
 docutils==0.14
 elasticsearch==6.2.0
+elasticsearch-dsl==6.1.0
 idna==2.6
+ipaddress==1.0.22
 jmespath==0.9.3
 pathspec==0.5.5
 python-dateutil==2.7.3
