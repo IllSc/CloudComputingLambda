@@ -67,6 +67,8 @@ plugins:
 functions:
   hello:
     handler: handler.hello
+  agg:
+    handler: aggregate.main
 
 custom:
   pythonRequirements:
