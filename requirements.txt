@@ -3,7 +3,7 @@ awsebcli==3.12.4
 boto3==1.7.26
 botocore==1.10.26
 cement==2.8.2
-certifi==2018.4.16
+certifi==2022.12.7
 chardet==3.0.4
 dockerpty==0.4.1
 docopt==0.6.2
